@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./dist/index.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/app.css" />
+  </head>
+  <script
+    defer
+    src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"
+  ></script>
+  <title>وب نئون - ورود</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@200&display=swap" rel="stylesheet">
+  <body>
+    <!-- site header -->
+    <header class="w-full h-[35rem]" x-data="{open : false}">
+      <!-- header background and content -->
+      <div
+        class="bg-slate-200 inset-0 w-full h-full z-10 relative flex flex-col justify-center items-center shadow-md shadow-slate-400"
+      >
+        <!-- navbar -->
+        <nav
+          class="fixed top-0 inset-y-0 bg-slate-200 shadow-sm shadow-slate-400 w-full h-16 flex flex-row-reverse justify-between items-center p-4 pl-10"
+        >
+          <!-- nav logo -->
+          <img
+            src="./img/logo.png"
+            class="top-1 left-1 w-12 h-12"
+            alt="destinations"
+          />
+          <!-- nav links -->
+          <div class="flex flex-row gap-6">
+            <a href="./index.html" class="hidden sm:flex text-emerald-700"
+              >صفحه اصلی</a
+            >
+            <a href="./shop.html" class="hidden sm:flex text-emerald-700"
+              >فروشگاه</a
+            >
+            <a href="./blog.html" class="hidden sm:flex text-emerald-700"
+              >بلاگ</a
+            >
+            <a
+              href="./hotel-landing.html"
+              class="hidden sm:flex text-emerald-700"
+              >لندینگ هتل</a
+            >
+            <a href="./login.html" class="hidden sm:flex text-emerald-700"
+              >ورود</a
+            >
+            <a href="./register.html" class="hidden sm:flex text-emerald-700"
+              >ثبت نام</a
+            >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6 block sm:hidden cursor-pointer"
+              @click="open = true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5"
+              />
+            </svg>
+          </div>
+        </nav>
+        <!-- header details -->
+        <div
+          class="flex flex-col-reverse gap-2 justify-center items-center title-neumorphism w-5/6 h-4/6"
+        >
+          <h1
+            class="sm:text-2 xl text-sm font-bold text-emerald-600 animate-bounce"
+          >
+            وارد حساب کاربریتان شود
+          </h1>
+          <h2
+            class="sm:text-xl text-xs font-medium text-emerald-600 animate-bounce"
+          >
+            برای استفاده از امکانات وبسایت وارد حسابتان شوید
+          </h2>
+        </div>
+      </div>
+      <div
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        x-cloak
+        class="bg-slate-900 bg-opacity-70 fixed inset-0 z-40 flex flex-col gap-4 backdrop-blur-md"
+        x-show="open"
+      ></h2>
+      <div
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        x-cloak
+        class="flex flex-col gap-6 z-50 fixed inset-y-0 right-0 bg-slate-200 w-1/2 p-5"
+        x-show="open"
+        x-on:click.away="open = false"
+      >
+        <a href="./index.html" class="text-emerald-700">صفحه اصلی</a>
+        <a href="./shop.html" class="text-emerald-700">فروشگاه</a>
+        <a href="./blog.html" class="text-emerald-700">بلاگ</a>
+        <a href="./hotel-landing.html" class="text-emerald-700">لندینگ هتل</a>
+        <a href="./login.html" class="text-emerald-700">ورود</a>
+        <a href="./register.html" class="text-emerald-700">ثبت نام</a>
+      </div>
+    </header>
+
+    <!-- start main -->
+    <main class="bg-slate-200 w-full h-full p-2 sm:p-10">
+      <!-- login form -->
+      <div
+        class="card-neumorphism flex flex-col justify-center items-center mt-10 p-2 sm:p-20"
+      >
+        <h2 class="text-base sm:text-xl font-bold text-emerald-600">
+          وارد حسابتان شوید
+        </h2>
+        <!-- border -->
+        <div
+          class="border-2 border-emerald-400 rounded-full w-40 h-1 animate-bounce mt-5"
+        ></div>
+        <!-- description -->
+        <p
+          class="text-xs sm:text-base font-normal leading-relaxed text-center text-green-600 mt-2"
+        >
+          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
+          از طراحان گرافیک است
+        </p>
+        <!-- form section -->
+        <form class="w-full">
+          <!-- email -->
+          <div class="form__group field w-full">
+            <input
+              required=""
+              id="email"
+              placeholder="Name"
+              class="form__field"
+              type="input"
+            />
+            <label class="form__label" for="emil">ایمیل</label>
+          </div>
+          <!-- password -->
+          <div class="form__group field w-full">
+            <input
+              required=""
+              id="password"
+              placeholder="Name"
+              class="form__field"
+              type="input"
+            />
+            <label class="form__label" for="password">رمز عبور</label>
+          </div>
+          <button
+            class="btn-neun w-full mt-5 py-2 text-green-800 font-light text-base"
+          >
+            ورود
+          </button>
+        </form>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <footer
+      class="w-full h-full relative flex flex-col border-t-2 border-emerald-900"
+    >
+      <!-- footer background and content -->
+      <div
+        class="bg-slate-200 inset-0 w-full h-full z-10 relative flex flex-col p-2 sm:p-10"
+      >
+        <!-- footer list -->
+        <div
+          class="card-neumorphism h-full w-full grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-10 p-10"
+        >
+          <ul class="sm:mr-5 flex flex-col gap-2">
+            <h2 class="text-base sm:text-lg font-medium text-emerald-600">
+              لندینگ ها
+            </h2>
+            <a href="./hotel-landing.html">
+              <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                لندینگ هتل
+              </li>
+            </a>
+            <a href="./app.html">
+              <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                لندینگ اپلیکیشن
+              </li>
+            </a>
+            <a href="./book-landing.html">
+              <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                لندینگ کتاب
+              </li>
+            </a>
+            <a href="./startup.html">
+              <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                لندینگ استارت آپ
+              </li>
+            </a>
+            <a href="./art.html">
+              <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                لندینگ هنر
+              </li>
+            </a>
+            <a href="./shop.html">
+              <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                لندینگ فروشگاه
+              </li>
+            </a>
+            <a href="./shop.html">
+              <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                لندینگ بلاگ
+              </li>
+            </a>
+          </ul>
+          <ul class="sm:mr-5 flex flex-col gap-2">
+            <h2 class="text-base sm:text-lg font-medium text-emerald-600">
+              صفحات خاص
+            </h2>
+            <a href="./error.html">
+              <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                ارور
+              </li>
+            </a>
+            <a href="./faq.html">
+              <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                سئوالات متداول
+              </li>
+            </a>
+            <a href="./gallery.html">
+              <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                گالری
+              </li>
+            </a>
+            <a href="./features.html">
+              <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                ویژگی ها
+              </li>
+            </a>
+            <a href="./plan-2.html">
+              <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                قیمت ها
+              </li>
+            </a>
+          </ul>
+          <ul class="sm:mr-5 flex flex-col gap-2">
+            <h2 class="text-base sm:text-lg font-medium text-emerald-600">
+              کامپوننت ها
+            </h2>
+            <a href="./faq-1.html">
+              <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                سئوالات متداول
+              </li>
+            </a>
+            <a href="./features.html">
+              <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                ویژگی ها
+              </li>
+            </a>
+            <a href="./gallery.html">
+              <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                گالری
+              </li>
+            </a>
+            <a href="./plan-1.html">
+              <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                قیمت ها
+              </li>
+            </a>
+          </ul>
+          <ul class="sm:mr-5 flex flex-col gap-2">
+            <h2 class="text-base sm:text-lg font-medium text-emerald-600">
+              دیگر صفحات
+            </h2>
+            <a href="./about-us.html">
+              <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                درباره ما
+              </li>
+            </a>
+            <a href="./blog-detail.html">
+              <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                جزئیات بلاگ
+              </li>
+            </a>
+            <a href="./book-store">
+              <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                فزوشگاه کتاب
+              </li>
+            </a>
+            <a href="./contact-us-1.html">
+              <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                ارتباط با ما
+              </li>
+            </a>
+            <a href="./hotel-detail.html">
+              <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                جزئیات هتل
+              </li>
+            </a>
+            <a href="./shop-detail.html">
+              <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                جزئیات فروشگاه
+              </li>
+            </a>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- end footer -->
+  </body>
+<script>document.addEventListener('contextmenu', event => event.preventDefault());</script>
+</html>
