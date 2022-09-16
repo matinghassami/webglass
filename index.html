@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dist/index.css" />
+    <link rel="stylesheet" href="./css/app.css" />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"
+    ></script>
+    <title>گلکسی - صفحه اصلی</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@200&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="relative p-4 sm:p-10 md:p-20 overflow-hidden flex justify-center items-center"
+  >
+    <!-- background image -->
+    <img
+      src="./img/background4.png"
+      alt=""
+      class="hidden sm:flex sm:fixed inset-0 h-full w-full"
+    />
+    <img
+      src="./img/mobile-background4.png"
+      alt=""
+      class="fixed sm:hidden inset-0 h-full w-full"
+    />
+    <!-- site content -->
+    <div class="overflow-y-scroll z-50 h-[35rem] site-content relative">
+      <!-- site header -->
+    <header class="w-full h-[35rem]" x-data="{open : false}">
+      <!-- header background and content -->
+      <div
+        class=" inset-0 w-full h-full z-10 relative flex flex-col justify-center items-center shadow-md shadow-slate-400"
+      >
+        <!-- navbar -->
+        <nav
+          class="fixed top-0 inset-y-0  shadow-sm shadow-slate-400 w-full h-16 flex flex-row-reverse justify-between items-center p-4 pl-10"
+        >
+          <!-- nav logo -->
+          <img
+            src="./img/logo.png"
+            class="top-1 left-1 w-12 h-12"
+            alt="destinations"
+          />
+          <!-- nav links -->
+          <div class="flex flex-row gap-6">
+            <a href="./index.html" class="hidden sm:flex text-emerald-700"
+              >صفحه اصلی</a
+            >
+            <a href="./shop.html" class="hidden sm:flex text-emerald-700"
+              >فروشگاه</a
+            >
+            <a href="./blog.html" class="hidden sm:flex text-emerald-700"
+              >بلاگ</a
+            >
+            <a
+              href="./hotel-landing.html"
+              class="hidden sm:flex text-emerald-700"
+              >لندینگ هتل</a
+            >
+            <a href="./login.html" class="hidden sm:flex text-emerald-700"
+              >ورود</a
+            >
+            <a href="./register.html" class="hidden sm:flex text-emerald-700"
+              >ثبت نام</a
+            >
+            <a href="https://rtl-theme.com" class="hidden sm:flex text-emerald-700"
+              >خرید از راستچین</a
+            >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6 block sm:hidden cursor-pointer"
+              @click="open = true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5"
+              />
+            </svg>
+          </div>
+        </nav>
+        <!-- header details -->
+        <div
+          class="flex flex-col gap-2 justify-center items-center title-neumorphism w-5/6 h-4/6"
+        >
+          <h1
+            class="sm:text-xl text-sm font-bold text-emerald-600 "
+          >
+            قالب چند منظوره وب نئون
+          </h1>
+          <a href="https://rtl-theme.com" class="sm:text-base text-xs font-medium cursor-pointer btn-shok">
+            خرید از راستچین
+          </a>
+        </div>
+      </div>
+      <div
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        x-cloak
+        class="bg-slate-900 bg-opacity-70 fixed inset-0 z-40 flex flex-col gap-4 backdrop-blur-md"
+        x-show="open"
+      ></div>
+      <div
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        x-cloak
+        class="flex flex-col gap-6 z-50 fixed inset-y-0 right-0  w-1/2 p-5"
+        x-show="open"
+        x-on:click.away="open = false"
+      >
+        <a href="./index.html" class="text-emerald-700">صفحه اصلی</a>
+        <a href="./shop.html" class="text-emerald-700">فروشگاه</a>
+        <a href="./blog.html" class="text-emerald-700">بلاگ</a>
+        <a href="./hotel-landing.html" class="text-emerald-700">لندینگ هتل</a>
+        <a href="./login.html" class="text-emerald-700">ورود</a>
+        <a href="./register.html" class="text-emerald-700">ثبت نام</a>
+        <a href="https://rtl-theme.com" class="text-emerald-700">خرید از راستچین</a>
+      </div>
+    </header>
+
+    <!-- start main -->
+    <main class=" w-full p-2 sm:p-10">
+      <!-- features -->
+      <div
+        class="w-full h-full  p-4 flex flex-col gap-4 justify-center items-center"
+      >
+        <h2 class="text-base text-emerald-700 sm:text-xl font-bold mt-10">
+          ویژگی های شگفت انگیز
+        </h2>
+        <!-- border -->
+        <div
+          class="border-2 border-emerald-600 rounded-lg w-40 h-1 "
+        ></div>
+        <!-- description -->
+        <p
+          class="text-xs sm:text-base font-normal text-slate-600 leading-relaxed text-center"
+        >
+          قالب برای همه وبسایت ها با طراحی نئومورفیسم و زیبا
+        </p>
+        <!-- cards container -->
+        <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+          <!-- card -->
+          <div class="rotate-card rounded-lg">
+            <div class="content">
+              <div class="front">
+                <h3 class="title text-slate-100 text-xl">خرید</h3>
+                <p class="subtitle text-slate-100 text-lg mt-4 ">
+                  اطلاعات 
+                </p>
+              </div>
+
+              <div class="back">
+                <p class="description text-slate-200">
+                  برای خرید قالب میتوانید از وبسایت راستچین اقدام کنید
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- card -->
+          <div class="rotate-card rounded-lg">
+            <div class="content">
+              <div class="front">
+                <h3 class="title text-slate-100 text-xl">استفاده</h3>
+                <p class="subtitle text-slate-100 text-lg mt-4 ">
+                  اطلاعات
+                </p>
+              </div>
+
+              <div class="back">
+                <p class="description text-slate-200">
+                  پس از خرید میتوانید به راحتی از قالب استفاده کنید
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- card -->
+          <div class="rotate-card rounded-lg">
+            <div class="content">
+              <div class="front">
+                <h3 class="title text-slate-100 text-xl">تغییر</h3>
+                <p class="subtitle text-slate-100 text-lg mt-4 ">
+                  اطلاعات
+                </p>
+              </div>
+
+              <div class="back">
+                <p class="description text-slate-200">
+                  برای تغییر باید از کتابخانه تلویند استفاده کنید
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- card -->
+          <div class="rotate-card rounded-lg">
+            <div class="content">
+              <div class="front">
+                <h3 class="title text-slate-100 text-xl">نوع قالب</h3>
+                <p class="subtitle text-slate-100 text-lg mt-4 ">
+                  اطلاعات قالب
+                </p>
+              </div>
+
+              <div class="back">
+                <p class="description text-slate-200">
+                  این یک قالب HTML است که میتوانید از آن برای وبسایتتان استفاده کیند
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-10">
+        <!-- card -->
+        <div
+          class="card overflow-hidden rounded-lg w-full h-96 flex flex-col gap-4 items-center relative group"
+        >
+          <img src="./img/home.png" class="h-60 w-full" alt="" />
+          <a
+            href="./index-1.html"
+            class="z-10 cursor-pointer btn-neun w-5/6 py-2 bg-emerald-600 flex justify-center items-center rounded-md text-white border-2 border-emerald-300"
+          >
+            پیش نمایش
+          </a>
+          <div class="card-info">
+            <p class="h-title">صفحه اصلی</p>
+          </div>
+          <div class="card-bio flex justify-center items-center">
+            <p>صفحه اصلی، صفحه لندینگ شرکتی برای وبسایت شما میباشد</p>
+          </div>
+        </div>
+        <!-- card -->
+        <div
+          class="card overflow-hidden rounded-lg w-full h-96 flex flex-col gap-4 items-center relative group"
+        >
+          <img src="./img/shop.png" class="h-60 w-full" alt="" />
+          <a
+            href="./shop.html"
+            class="z-10 cursor-pointer btn-neun w-5/6 py-2 bg-emerald-600 flex justify-center items-center rounded-md text-white border-2 border-emerald-300"
+          >
+            پیش نمایش
+          </a>
+          <div class="card-info">
+            <p class="h-title">صفحه فروشگاه</p>
+          </div>
+          <div class="card-bio flex justify-center items-center">
+            <p>صفحه فروشگاه میزبان محصولات شماست</p>
+          </div>
+        </div>
+        <!-- card -->
+        <div
+          class="card overflow-hidden rounded-lg w-full h-96 flex flex-col gap-4 items-center relative group"
+        >
+          <img src="./img/shop-2.png" class="h-60 w-full" alt="" />
+          <a
+            href="./shop-2.html"
+            class="z-10 cursor-pointer btn-neun w-5/6 py-2 bg-emerald-600 flex justify-center items-center rounded-md text-white border-2 border-emerald-300"
+          >
+            پیش نمایش
+          </a>
+          <div class="card-info">
+            <p class="h-title">صفحه فروشگاه 2</p>
+          </div>
+          <div class="card-bio flex justify-center items-center">
+            <p>صفحه فروشگاه میزبان محصولات شماست</p>
+          </div>
+        </div>
+        <!-- card -->
+        <div
+          class="card overflow-hidden rounded-lg w-full h-96 flex flex-col gap-4 items-center relative group"
+        >
+          <img src="./img/blog.png" class="h-60 w-full" alt="" />
+          <a
+            href="./blog.html"
+            class="z-10 cursor-pointer btn-neun w-5/6 py-2 bg-emerald-600 flex justify-center items-center rounded-md text-white border-2 border-emerald-300"
+          >
+            پیش نمایش
+          </a>
+          <div class="card-info">
+            <p class="h-title">صفحه بلاگ</p>
+          </div>
+          <div class="card-bio flex justify-center items-center">
+            <p>صفحه بلاگ میزبان مقالات شماست</p>
+          </div>
+        </div>
+        <!-- card -->
+        <div
+          class="card overflow-hidden rounded-lg w-full h-96 flex flex-col gap-4 items-center relative group"
+        >
+          <img src="./img/blog-2.png" class="h-60 w-full" alt="" />
+          <a
+            href="./blog-2.html"
+            class="z-10 cursor-pointer btn-neun w-5/6 py-2 bg-emerald-600 flex justify-center items-center rounded-md text-white border-2 border-emerald-300"
+          >
+            پیش نمایش
+          </a>
+          <div class="card-info">
+            <p class="h-title">صفحه بلاگ 2</p>
+          </div>
+          <div class="card-bio flex justify-center items-center">
+            <p>صفحه بلاگ میزبان مقالات شماست</p>
+          </div>
+        </div>
+        <!-- card -->
+        <div
+          class="card overflow-hidden rounded-lg w-full h-96 flex flex-col gap-4 items-center relative group"
+        >
+          <img src="./img/hotel-landing.png" class="h-60 w-full" alt="" />
+          <a
+            href="./hotel-landing.html"
+            class="z-10 cursor-pointer btn-neun w-5/6 py-2 bg-emerald-600 flex justify-center items-center rounded-md text-white border-2 border-emerald-300"
+          >
+            پیش نمایش
+          </a>
+          <div class="card-info">
+            <p class="h-title">صفحه هتل</p>
+          </div>
+          <div class="card-bio flex justify-center items-center">
+            <p>صفحه لندینگ هتل میزبان هتل های شماست</p>
+          </div>
+        </div>
+        <!-- card -->
+        <div
+          class="card overflow-hidden rounded-lg w-full h-96 flex flex-col gap-4 items-center relative group"
+        >
+          <img src="./img/hotel-detail.png" class="h-60 w-full" alt="" />
+          <a
+            href="./hotel-detail.html"
+            class="z-10 cursor-pointer btn-neun w-5/6 py-2 bg-emerald-600 flex justify-center items-center rounded-md text-white border-2 border-emerald-300"
+          >
+            پیش نمایش
+          </a>
+          <div class="card-info">
+            <p class="h-title">صفحه جزئیات هتل</p>
+          </div>
+          <div class="card-bio flex justify-center items-center">
+            <p>صفحه جزئیات هتل میزبان هتل های شماست</p>
+          </div>
+        </div>
+        <!-- card -->
+        <div
+          class="card overflow-hidden rounded-lg w-full h-96 flex flex-col gap-4 items-center relative group"
+        >
+          <img src="./img/shop-detail.png" class="h-60 w-full" alt="" />
+          <a
+            href="./shop-detail.html"
+            class="z-10 cursor-pointer btn-neun w-5/6 py-2 bg-emerald-600 flex justify-center items-center rounded-md text-white border-2 border-emerald-300"
+          >
+            پیش نمایش
+          </a>
+          <div class="card-info">
+            <p class="h-title">صفحه جزئیات محصولات</p>
+          </div>
+          <div class="card-bio flex justify-center items-center">
+            <p>صفحه جزئیات محصول میزبان محصول های شماست</p>
+          </div>
+        </div>
+        <!-- card -->
+        <div
+          class="card overflow-hidden rounded-lg w-full h-96 flex flex-col gap-4 items-center relative group"
+        >
+          <img src="./img/blog-detail.png" class="h-60 w-full" alt="" />
+          <a
+            href="./blog-detail.html"
+            class="z-10 cursor-pointer btn-neun w-5/6 py-2 bg-emerald-600 flex justify-center items-center rounded-md text-white border-2 border-emerald-300"
+          >
+            پیش نمایش
+          </a>
+          <div class="card-info">
+            <p class="h-title">صفحه جزئیات بلاگ</p>
+          </div>
+          <div class="card-bio flex justify-center items-center">
+            <p>صفحه جزئیات بلاگ میزبان مقالات های شماست</p>
+          </div>
+        </div>
+        <!-- card -->
+        <div
+          class="card overflow-hidden rounded-lg w-full h-96 flex flex-col gap-4 items-center relative group"
+        >
+          <img src="./img/about-us.png" class="h-60 w-full" alt="" />
+          <a
+            href="./about-us-1.html"
+            class="z-10 cursor-pointer btn-neun w-5/6 py-2 bg-emerald-600 flex justify-center items-center rounded-md text-white border-2 border-emerald-300"
+          >
+            پیش نمایش
+          </a>
+          <div class="card-info">
+            <p class="h-title">صفحه درباره ما</p>
+          </div>
+          <div class="card-bio flex justify-center items-center">
+            <p>صفحه درباره ما برای آشنایی کاربران وبسایتتان با شماست</p>
+          </div>
+        </div>
+        <!-- card -->
+        <div
+          class="card overflow-hidden rounded-lg w-full h-96 flex flex-col gap-4 items-center relative group"
+        >
+          <img src="./img/app.png" class="h-60 w-full" alt="" />
+          <a
+            href="./app.html"
+            class="z-10 cursor-pointer btn-neun w-5/6 py-2 bg-emerald-600 flex justify-center items-center rounded-md text-white border-2 border-emerald-300"
+          >
+            پیش نمایش
+          </a>
+          <div class="card-info">
+            <p class="h-title">صفحه لندینگ اپلیکیشن</p>
+          </div>
+          <div class="card-bio flex justify-center items-center">
+            <p>صفحه لندینگ اپلیکیشن میزبان اپلیکیشن های شماست</p>
+          </div>
+        </div>
+        <!-- card -->
+        <div
+          class="card overflow-hidden rounded-lg w-full h-96 flex flex-col gap-4 items-center relative group"
+        >
+          <img src="./img/art.png" class="h-60 w-full" alt="" />
+          <a
+            href="./art.html"
+            class="z-10 cursor-pointer btn-neun w-5/6 py-2 bg-emerald-600 flex justify-center items-center rounded-md text-white border-2 border-emerald-300"
+          >
+            پیش نمایش
+          </a>
+          <div class="card-info">
+            <p class="h-title">صفحه لندینگ هنر</p>
+          </div>
+          <div class="card-bio flex justify-center items-center">
+            <p>صفحه لندینگ هنر میزبان آثار هنری شماست</p>
+          </div>
+        </div>
+        <!-- card -->
+        <div
+          class="card overflow-hidden rounded-lg w-full h-96 flex flex-col gap-4 items-center relative group"
+        >
+          <img src="./img/book-landing.png" class="h-60 w-full" alt="" />
+          <a
+            href="./book-landing.html"
+            class="z-10 cursor-pointer btn-neun w-5/6 py-2 bg-emerald-600 flex justify-center items-center rounded-md text-white border-2 border-emerald-300"
+          >
+            پیش نمایش
+          </a>
+          <div class="card-info">
+            <p class="h-title">صفحه لندینگ کتاب</p>
+          </div>
+          <div class="card-bio flex justify-center items-center">
+            <p>صفحه لندینگ کتاب میزبان آثار ادبی شماست</p>
+          </div>
+        </div>
+        <!-- card -->
+        <div
+          class="card overflow-hidden rounded-lg w-full h-96 flex flex-col gap-4 items-center relative group"
+        >
+          <img src="./img/book-store.png" class="h-60 w-full" alt="" />
+          <a
+            href="./book-store.html"
+            class="z-10 cursor-pointer btn-neun w-5/6 py-2 bg-emerald-600 flex justify-center items-center rounded-md text-white border-2 border-emerald-300"
+          >
+            پیش نمایش
+          </a>
+          <div class="card-info">
+            <p class="h-title">صفحه فروشگاه کتاب</p>
+          </div>
+          <div class="card-bio flex justify-center items-center">
+            <p>صفحه فروشگاه کتاب میزبان فروش آثار ادبی شماست</p>
+          </div>
+        </div>
+        <!-- card -->
+        <div
+          class="card overflow-hidden rounded-lg w-full h-96 flex flex-col gap-4 items-center relative group"
+        >
+          <img src="./img/contact-us.png" class="h-60 w-full" alt="" />
+          <a
+            href="./contact-us-1.html"
+            class="z-10 cursor-pointer btn-neun w-5/6 py-2 bg-emerald-600 flex justify-center items-center rounded-md text-white border-2 border-emerald-300"
+          >
+            پیش نمایش
+          </a>
+          <div class="card-info">
+            <p class="h-title">صفحه ارتباط با ما</p>
+          </div>
+          <div class="card-bio flex justify-center items-center">
+            <p>صفحه ارتباط با ما برای تعامل کاربران با پشتیبانی شماست</p>
+          </div>
+        </div>
+        <!-- card -->
+        <div
+          class="card overflow-hidden rounded-lg w-full h-96 flex flex-col gap-4 items-center relative group"
+        >
+          <img src="./img/errors.png" class="h-60 w-full" alt="" />
+          <a
+            href="./erros.html"
+            class="z-10 cursor-pointer btn-neun w-5/6 py-2 bg-emerald-600 flex justify-center items-center rounded-md text-white border-2 border-emerald-300"
+          >
+            پیش نمایش
+          </a>
+          <div class="card-info">
+            <p class="h-title">صفحه ارور ها</p>
+          </div>
+          <div class="card-bio flex justify-center items-center">
+            <p>صفحه ارور ها برای زمانیست که وبسایت شما به درستی کار نمیکند</p>
+          </div>
+        </div>
+        <!-- card -->
+        <div
+          class="card overflow-hidden rounded-lg w-full h-96 flex flex-col gap-4 items-center relative group"
+        >
+          <img src="./img/faq-1&2.png" class="h-60 w-full" alt="" />
+          <a
+            href="./faq-1.html"
+            class="z-10 cursor-pointer btn-neun w-5/6 py-2 bg-emerald-600 flex justify-center items-center rounded-md text-white border-2 border-emerald-300"
+          >
+            پیش نمایش
+          </a>
+          <div class="card-info">
+            <p class="h-title">صفحه سئوالات متداول</p>
+          </div>
+          <div class="card-bio flex justify-center items-center">
+            <p>صفحه سئوالات متداول برای پاسخ گویی به سئوالات کاربران شماست</p>
+          </div>
+        </div>
+        <!-- card -->
+        <div
+          class="card overflow-hidden rounded-lg w-full h-96 flex flex-col gap-4 items-center relative group"
+        >
+          <img src="./img/faq-1&2.png" class="h-60 w-full" alt="" />
+          <a
+            href="./faq-2.html"
+            class="z-10 cursor-pointer btn-neun w-5/6 py-2 bg-emerald-600 flex justify-center items-center rounded-md text-white border-2 border-emerald-300"
+          >
+            پیش نمایش
+          </a>
+          <div class="card-info">
+            <p class="h-title">صفحه سئوالات متداول</p>
+          </div>
+          <div class="card-bio flex justify-center items-center">
+            <p>صفحه سئوالات متداول برای پاسخ گویی به سئوالات کاربران شماست</p>
+          </div>
+        </div>
+        <!-- card -->
+        <div
+          class="card overflow-hidden rounded-lg w-full h-96 flex flex-col gap-4 items-center relative group"
+        >
+          <img src="./img/features.png" class="h-60 w-full" alt="" />
+          <a
+            href="./features.html"
+            class="z-10 cursor-pointer btn-neun w-5/6 py-2 bg-emerald-600 flex justify-center items-center rounded-md text-white border-2 border-emerald-300"
+          >
+            پیش نمایش
+          </a>
+          <div class="card-info">
+            <p class="h-title">کامپوننت ویژگی ها</p>
+          </div>
+          <div class="card-bio flex justify-center items-center">
+            <p>کامپوننت ویژگی ها برای استفاده در جا های مختلف و ایجاد تغییر در وبسایت شماست</p>
+          </div>
+        </div>
+        <!-- card -->
+        <div
+          class="card overflow-hidden rounded-lg w-full h-96 flex flex-col gap-4 items-center relative group"
+        >
+          <img src="./img/features-2.png" class="h-60 w-full" alt="" />
+          <a
+            href="./features-2.html"
+            class="z-10 cursor-pointer btn-neun w-5/6 py-2 bg-emerald-600 flex justify-center items-center rounded-md text-white border-2 border-emerald-300"
+          >
+            پیش نمایش
+          </a>
+          <div class="card-info">
+            <p class="h-title">کامپوننت ویژگی ها</p>
+          </div>
+          <div class="card-bio flex justify-center items-center">
+            <p>کامپوننت ویژگی ها برای استفاده در جا های مختلف و ایجاد تغییر در وبسایت شماست</p>
+          </div>
+        </div>
+        <!-- card -->
+        <div
+          class="card overflow-hidden rounded-lg w-full h-96 flex flex-col gap-4 items-center relative group"
+        >
+          <img src="./img/gallery.png" class="h-60 w-full" alt="" />
+          <a
+            href="./gallery.html"
+            class="z-10 cursor-pointer btn-neun w-5/6 py-2 bg-emerald-600 flex justify-center items-center rounded-md text-white border-2 border-emerald-300"
+          >
+            پیش نمایش
+          </a>
+          <div class="card-info">
+            <p class="h-title">صفحه گالری</p>
+          </div>
+          <div class="card-bio flex justify-center items-center">
+            <p>صفحه گالری برای میزبانی از غکس های وبسایت شماست</p>
+          </div>
+        </div>
+        <!-- card -->
+        <div
+          class="card overflow-hidden rounded-lg w-full h-96 flex flex-col gap-4 items-center relative group"
+        >
+          <img src="./img/login.png" class="h-60 w-full" alt="" />
+          <a
+            href="./login.html"
+            class="z-10 cursor-pointer btn-neun w-5/6 py-2 bg-emerald-600 flex justify-center items-center rounded-md text-white border-2 border-emerald-300"
+          >
+            پیش نمایش
+          </a>
+          <div class="card-info">
+            <p class="h-title">صفحه ورود</p>
+          </div>
+          <div class="card-bio flex justify-center items-center">
+            <p>صفحه ورود برای ورود کاربران به حساب کاربریشان در وبسایت شماست</p>
+          </div>
+        </div>
+        <!-- card -->
+        <div
+          class="card overflow-hidden rounded-lg w-full h-96 flex flex-col gap-4 items-center relative group"
+        >
+          <img src="./img/register.png" class="h-60 w-full" alt="" />
+          <a
+            href="./register.html"
+            class="z-10 cursor-pointer btn-neun w-5/6 py-2 bg-emerald-600 flex justify-center items-center rounded-md text-white border-2 border-emerald-300"
+          >
+            پیش نمایش
+          </a>
+          <div class="card-info">
+            <p class="h-title">صفحه ثبت نام</p>
+          </div>
+          <div class="card-bio flex justify-center items-center">
+            <p>صفحه ثبت نام برای ثبت نام کاربران در وبسایت شماست</p>
+          </div>
+        </div>
+        <!-- card -->
+        <div
+          class="card overflow-hidden rounded-lg w-full h-96 flex flex-col gap-4 items-center relative group"
+        >
+          <img src="./img/plan-1.png" class="h-60 w-full" alt="" />
+          <a
+            href="./plan-1.html"
+            class="z-10 cursor-pointer btn-neun w-5/6 py-2 bg-emerald-600 flex justify-center items-center rounded-md text-white border-2 border-emerald-300"
+          >
+            پیش نمایش
+          </a>
+          <div class="card-info">
+            <p class="h-title">کامپوننت قیمت ها</p>
+          </div>
+          <div class="card-bio flex justify-center items-center">
+            <p>کامپوننت قیمت ها برای ایجاد تغییرات در وبسایت شماست</p>
+          </div>
+        </div>
+        <!-- card -->
+        <div
+          class="card overflow-hidden rounded-lg w-full h-96 flex flex-col gap-4 items-center relative group"
+        >
+          <img src="./img/plan-2.png" class="h-60 w-full" alt="" />
+          <a
+            href="./plan-2.html"
+            class="z-10 cursor-pointer btn-neun w-5/6 py-2 bg-emerald-600 flex justify-center items-center rounded-md text-white border-2 border-emerald-300"
+          >
+            پیش نمایش
+          </a>
+          <div class="card-info">
+            <p class="h-title">کامپوننت قیمت ها</p>
+          </div>
+          <div class="card-bio flex justify-center items-center">
+            <p>کامپوننت قیمت ها برای ایجاد تغییرات در وبسایت شماست</p>
+          </div>
+        </div>
+        <!-- card -->
+        <div
+          class="card overflow-hidden rounded-lg w-full h-96 flex flex-col gap-4 items-center relative group"
+        >
+          <img src="./img/home.png" class="h-60 w-full" alt="" />
+          <a
+            href="./startup.html"
+            class="z-10 cursor-pointer btn-neun w-5/6 py-2 bg-emerald-600 flex justify-center items-center rounded-md text-white border-2 border-emerald-300"
+          >
+            پیش نمایش
+          </a>
+          <div class="card-info">
+            <p class="h-title">صفحه لندینگ استارت آپ</p>
+          </div>
+          <div class="card-bio flex justify-center items-center">
+            <p>صفحه لندینگ استارت آپ میزبان استارت آپ شماست</p>
+          </div>
+        </div>
+      </div>
+      </main>
+
+      <!-- footer -->
+      <footer class="w-full h-full flex flex-col border-t-2 border-emerald-900">
+        <!-- footer background and content -->
+        <div class="inset-0 w-full h-full flex flex-col p-2 sm:p-10">
+          <!-- footer list -->
+          <div
+            class="card-neumorphism h-full w-full grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-10 p-10"
+          >
+            <ul class="sm:mr-5 flex flex-col gap-2">
+              <h2 class="text-base sm:text-lg font-medium text-emerald-600">
+                لندینگ ها
+              </h2>
+              <a href="./hotel-landing.html">
+                <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                  لندینگ هتل
+                </li>
+              </a>
+              <a href="./app.html">
+                <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                  لندینگ اپلیکیشن
+                </li>
+              </a>
+              <a href="./book-landing.html">
+                <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                  لندینگ کتاب
+                </li>
+              </a>
+              <a href="./startup.html">
+                <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                  لندینگ استارت آپ
+                </li>
+              </a>
+              <a href="./art.html">
+                <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                  لندینگ هنر
+                </li>
+              </a>
+              <a href="./shop.html">
+                <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                  لندینگ فروشگاه
+                </li>
+              </a>
+              <a href="./shop.html">
+                <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                  لندینگ بلاگ
+                </li>
+              </a>
+            </ul>
+            <ul class="sm:mr-5 flex flex-col gap-2">
+              <h2 class="text-base sm:text-lg font-medium text-emerald-600">
+                صفحات خاص
+              </h2>
+              <a href="./error.html">
+                <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                  ارور
+                </li>
+              </a>
+              <a href="./faq.html">
+                <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                  سئوالات متداول
+                </li>
+              </a>
+              <a href="./gallery.html">
+                <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                  گالری
+                </li>
+              </a>
+              <a href="./features.html">
+                <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                  ویژگی ها
+                </li>
+              </a>
+              <a href="./plan-2.html">
+                <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                  قیمت ها
+                </li>
+              </a>
+            </ul>
+            <ul class="sm:mr-5 flex flex-col gap-2">
+              <h2 class="text-base sm:text-lg font-medium text-emerald-600">
+                کامپوننت ها
+              </h2>
+              <a href="./faq-1.html">
+                <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                  سئوالات متداول
+                </li>
+              </a>
+              <a href="./features.html">
+                <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                  ویژگی ها
+                </li>
+              </a>
+              <a href="./gallery.html">
+                <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                  گالری
+                </li>
+              </a>
+              <a href="./plan-1.html">
+                <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                  قیمت ها
+                </li>
+              </a>
+            </ul>
+            <ul class="sm:mr-5 flex flex-col gap-2">
+              <h2 class="text-base sm:text-lg font-medium text-emerald-600">
+                دیگر صفحات
+              </h2>
+              <a href="./about-us.html">
+                <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                  درباره ما
+                </li>
+              </a>
+              <a href="./blog-detail.html">
+                <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                  جزئیات بلاگ
+                </li>
+              </a>
+              <a href="./book-store">
+                <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                  فزوشگاه کتاب
+                </li>
+              </a>
+              <a href="./contact-us-1.html">
+                <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                  ارتباط با ما
+                </li>
+              </a>
+              <a href="./hotel-detail.html">
+                <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                  جزئیات هتل
+                </li>
+              </a>
+              <a href="./shop-detail.html">
+                <li class="text-emerald-500 text-sm sm:text-base font-normal">
+                  جزئیات فروشگاه
+                </li>
+              </a>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      <!-- end footer -->
+    </div>
+    <div class="fixed z-50 bottom-0 inset-x-0 flex justify-center items-center">
+      <p class="text-white">
+        کپی رایت © این قالب دارای حق انتشار اختصاصی است و هرگونه کپی برداری از
+        آن غیر قانونی میباشد
+      </p>
+    </div>
+  </body>
+  <script>
+    document.addEventListener("contextmenu", (event) => event.preventDefault());
+  </script>
+</html>
